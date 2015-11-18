@@ -1,0 +1,13 @@
+{
+  "name": "tohloveApp",
+  "version": "1.0.0",
+  "description": "刀剣乱舞デスクトップアプリケーション",
+  "main": "main.js",
+  "scripts": {
+    "test": "start": "node_modules/.bin/electron .",
+            "build": "node build.js"
+  },
+  "keywords": [],
+  "author": "sanoani",
+  "license": "ISC"
+}
