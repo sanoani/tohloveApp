@@ -1,33 +1,38 @@
 'use strict';
 
-// アプリケーションをコントロールするモジュール
 var app = require('app');
-// ウィンドウを作成するモジュール
 var BrowserWindow = require('browser-window');
 
-// クラッシュレポート
 require('crash-reporter').start();
 
-// メインウィンドウはGCされないようにグローバル宣言
 var mainWindow = null;
+var ppapi_flash_path = null;
+
+app.on('window-all-closed', function () {
+  if (process.platform != 'darwin')
+    app.quit();
+});
 
 // 全てのウィンドウが閉じたら終了
-app.on('window-all-closed', function() {
+app.on('window-all-closed', function () {
   if (process.platform != 'darwin') {
     app.quit();
   }
 });
 
 // Electronの初期化完了後に実行
-app.on('ready', function() {
-  // メイン画面の表示。ウィンドウの幅、高さを指定できる
-  mainWindow = new BrowserWindow({width: 800, height: 600});
-  //mainWindow.loadUrl('file://' + __dirname + '/index.html');
-  mainWindow.loadUrl('http://www.dmm.com/netgame/social/-/gadgets/=/app_id=825012/');
-    
+app.on('ready', function () {
+  mainWindow = new BrowserWindow({
+    width: 960,
+    height: 580,
+    'web-preferences': {
+      'plugins': true
+    }
+  });
+  mainWindow.loadUrl('file://' + __dirname + '/index.html');
 
   // ウィンドウが閉じられたらアプリも終了
-  mainWindow.on('closed', function() {
+  mainWindow.on('closed', function () {
     mainWindow = null;
   });
 });

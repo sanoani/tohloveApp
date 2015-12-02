@@ -4,10 +4,17 @@
   "description": "刀剣乱舞デスクトップアプリケーション",
   "main": "main.js",
   "scripts": {
-    "test": "start": "node_modules/.bin/electron .",
-            "build": "node build.js"
+    "start": "electron ./src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://git@github.com/sanoani/tohloveApp.git"
   },
   "keywords": [],
   "author": "sanoani",
-  "license": "ISC"
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sanoani/tohloveApp/issues"
+  },
+  "homepage": "https://github.com/sanoani/tohloveApp#readme"
 }
