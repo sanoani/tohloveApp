@@ -1,30 +1,82 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
 
 <head>
   <meta charset="UTF-8">
-  <!--  <meta http-equiv="refresh" content="0; URL=http://www.dmm.com/netgame/social/-/gadgets/=/app_id=825012/">-->
-  <title>今日も審神者は刀剣を手入れする</title>
-  <link rel='stylesheet' href='./index.css'>
+  <meta name="description" content="刀剣乱舞のアプリケーションです。">
+  <title>刀剣乱舞</title>
+  <link rel='stylesheet' href='./css/photon.min.css'>
+  <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script src="noscroll.js"></script>
 </head>
 
 <body>
-  <script>
-    require('./app.js')
-  </script>
+  <div class="window">
 
-  <webview id="mainWebView" src="http://www.dmm.com/netgame/social/-/gadgets/=/app_id=825012/" autosize="on" plugins></webview>
-  <!--  <script src='./tohlove.js'></script>-->
+    <webview id="flash" src="http://www.dmm.com/netgame/social/-/gadgets/=/app_id=825012/" autosize="on" style="display:inline-block; width:940px; height:560px; top: 0; right: 0; bottom: 0; left: 0;" plugins></webview>
 
-  <h1>初めてのElectron</h1>
-  <p>We are using io.js
-    <script>
-      document.write(process.version)
-    </script> and Electron
-    <script>
-      document.write(process.versions['electron'])
-    </script>.</p>
-  <p>DMM.com ログインページに移動します。</p>
+    <header class="toolbar toolbar-header">
+      <div class="toolbar-actions">
+        <div class="btn-group">
+          <button class="btn btn-default">
+            <span class="icon icon-home"></span>
+          </button>
+          <button class="btn btn-default">
+            <span class="icon icon-folder"></span>
+          </button>
+          <button class="btn btn-default active">
+            <span class="icon icon-cloud"></span>
+          </button>
+          <button class="btn btn-default">
+            <span class="icon icon-popup"></span>
+          </button>
+          <button class="btn btn-default">
+            <span class="icon icon-shuffle"></span>
+          </button>
+        </div>
+
+        <button class="btn btn-default">
+          <span class="icon icon-home icon-text"></span> Filters
+        </button>
+
+        <button class="btn btn-default btn-dropdown pull-right">
+          <span class="icon icon-megaphone"></span>
+        </button>
+      </div>
+    </header>
+
+    <div class="window-content">
+      <div class="pane-group">
+
+        <nav class="nav-group">
+          <h5 class="nav-group-title">かくにん</h5>
+          <a class="nav-group-item active">
+            <span class="icon icon-home"></span> 部隊
+          </a>
+          <span class="nav-group-item">
+            <span class="icon icon-download"></span> 遠征
+          </span>
+          <span class="nav-group-item">
+            <span class="icon icon-folder"></span> 手入れ
+          </span>
+          <span class="nav-group-item">
+            <span class="icon icon-signal"></span> 鍛刀
+          </span>
+          <span class="nav-group-item">
+            <span class="icon icon-print"></span> 所持刀剣
+          </span>
+          <span class="nav-group-item">
+            <span class="icon icon-cloud"></span> 設定
+          </span>
+        </nav>
+
+        <div class="pane">aaa...</div>
+      </div>
+    </div>
+  </div>
+
+  <script src="tohlove.js"></script>
+
 
 </body>
 
